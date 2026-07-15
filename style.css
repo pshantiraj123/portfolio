@@ -1,0 +1,212 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+/* Hero Section */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.hero h3{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* Buttons */
+
+.btn{
+    display:inline-block;
+    background:#38bdf8;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    margin:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0284c7;
+}
+
+.btn2{
+    display:inline-block;
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    margin:10px;
+    transition:.3s;
+}
+
+.btn2:hover{
+    background:#38bdf8;
+    color:white;
+}
+
+/* Sections */
+
+section{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+section h2{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:30px;
+    color:#38bdf8;
+}
+
+/* Skills */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skills span{
+    background:#1e293b;
+    padding:12px 20px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.skills span:hover{
+    background:#38bdf8;
+    transform:translateY(-5px);
+}
+
+/* Cards */
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.card h4{
+    color:#cbd5e1;
+    margin-bottom:10px;
+}
+
+.card ul{
+    margin-left:20px;
+}
+
+.card li{
+    margin-bottom:8px;
+}
+
+/* Contact */
+
+#contact p{
+    text-align:center;
+    margin:15px;
+    font-size:18px;
+}
+
+#contact i{
+    color:#38bdf8;
+    margin-right:10px;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#1e293b;
+    color:#94a3b8;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero h3{
+    font-size:20px;
+}
+
+.profile{
+    width:140px;
+    height:140px;
+}
+
+section h2{
+    font-size:28px;
+}
+
+.skills{
+    flex-direction:column;
+    align-items:center;
+}
+
+.btn,.btn2{
+    display:block;
+    width:220px;
+    margin:15px auto;
+}
+
+}
