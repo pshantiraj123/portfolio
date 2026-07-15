@@ -1,100 +1,53 @@
-// ===== Typing Effect =====
-
 const roles = [
-    "DevOps Engineer",
-    "Site Reliability Engineer",
-    "AWS Engineer",
-    "Kubernetes Engineer",
-    "Cloud Engineer"
+"DevOps Engineer",
+"Site Reliability Engineer",
+"AWS Cloud Engineer",
+"Kubernetes Engineer",
+"Platform Engineer"
 ];
 
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let i = 0;
+let j = 0;
+let deleting = false;
 
-const roleElement = document.querySelector(".hero h3");
+const typing = document.getElementById("typing");
 
-function typeEffect() {
+function type(){
 
-    const currentRole = roles[roleIndex];
+let text = roles[i];
 
-    if (!isDeleting) {
-        roleElement.textContent = currentRole.substring(0, charIndex++);
-    } else {
-        roleElement.textContent = currentRole.substring(0, charIndex--);
-    }
+typing.innerHTML = text.substring(0,j);
 
-    let speed = 120;
+if(!deleting){
 
-    if (!isDeleting && charIndex === currentRole.length + 1) {
-        isDeleting = true;
-        speed = 1500;
-    }
+j++;
 
-    if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-    }
+if(j>text.length){
 
-    setTimeout(typeEffect, speed);
-}
+deleting=true;
 
-typeEffect();
+setTimeout(type,1200);
 
-
-// ===== Fade Animation =====
-
-const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll", () => {
-
-    cards.forEach(card => {
-
-        const top = card.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 100) {
-            card.classList.add("show");
-        }
-
-    });
-
-});
-
-
-// ===== Scroll To Top =====
-
-const topBtn = document.createElement("button");
-
-topBtn.innerHTML = "↑";
-
-topBtn.id = "topBtn";
-
-document.body.appendChild(topBtn);
-
-window.onscroll = function(){
-
-    if(document.documentElement.scrollTop > 300){
-
-        topBtn.style.display = "block";
-
-    }
-
-    else{
-
-        topBtn.style.display = "none";
-
-    }
+return;
 
 }
 
-topBtn.onclick = function(){
+}else{
 
-    window.scrollTo({
+j--;
 
-        top:0,
+if(j==0){
 
-        behavior:"smooth"
+deleting=false;
 
-    });
+i=(i+1)%roles.length;
 
 }
+
+}
+
+setTimeout(type,deleting?50:120);
+
+}
+
+type();
